@@ -1,0 +1,2 @@
+sudo hb-service link
+

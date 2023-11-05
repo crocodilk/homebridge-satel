@@ -5,11 +5,52 @@
   "schema": {
     "type": "object",
     "properties": {
-      "name": {
-        "title": "Name",
+      "integraIp": {
+        "title": "Integra IP address",
         "type": "string",
         "required": true,
-        "default": "Example Dynamic Platform"
+        "format": "hostname",
+        "default": "0.0.0.0"
+      },
+      "integraPort": {
+        "title": "Integra port",
+        "type": "number",
+        "minimum": 0,
+        "maximum": 65535,
+        "required": true,
+        "default": "7094"
+      },
+      "zones": {
+        "title": "Zones",
+        "type": "array",
+        "items": {
+          "title": "Zone",
+          "type": "object",
+          "properties": {
+            "deviceNumber": {
+              "title": "Number",
+              "type": "number",
+              "minimum": 1,
+              "maximum": 256,
+              "required": true
+            },
+            "deviceName": {
+              "title": "Name",
+              "type": "string",
+              "required": true
+            },
+            "deviceType": {
+              "title": "Type",
+              "type": "string",
+              "default": "contact",
+              "oneOf": [
+                { "title": "Contact", "enum": ["contact"] },
+                { "title": "Motion", "enum": ["motion"] }
+              ],
+              "required": true
+            }
+          }
+        }
       }
     }
   }

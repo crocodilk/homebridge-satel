@@ -1,5 +1,5 @@
 {
-  "private": true,
+  "private": false,
   "displayName": "Satel Integra",
   "name": "@crocodilk/homebridge-satel",
   "version": "1.0.0",
@@ -13,7 +13,7 @@
     "url": "https://github.com/crocodilk/homebridge-satel/issues"
   },
   "engines": {
-    "node": "^18.17.0",
+    "node": ">18.17.0",
     "homebridge": "^1.6.0"
   },
   "main": "dist/index.js",
@@ -26,7 +26,11 @@
   "keywords": [
     "homebridge-plugin"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "bitwise": "^2.2.0",
+    "rxjs": "^7.8.1",
+    "windows-1250": "^3.0.4"
+  },
   "devDependencies": {
     "@types/node": "^18.16.20",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
